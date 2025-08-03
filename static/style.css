@@ -27,25 +27,29 @@ h1, h2 {
 }
 
 #math-problem {
-    font-size: 2.5em;
-    font-weight: bold;
-    margin-bottom: 25px;
-    padding: 15px;
-    background-color: #e6f2ff;
-    border-radius: 8px;
-    border: 1px solid #cce0ff;
+    font-size: 3em; /* ขยายขนาดโจทย์ */
+    padding: 20px;
+    background-color: #e8f5e9; /* สีพื้นหลังอ่อนลง */
+    border: 1px solid #c8e6c9;
+    margin-bottom: 30px;
 }
 
 button {
     background-color: #007bff;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 25px;
     border: none;
-    border-radius: 5px;
+    border-radius: 15px; /* <--- ลองปรับค่านี้ดู */
     cursor: pointer;
     font-size: 1em;
     margin: 5px;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+    letter-spacing: 0.5px
 }
 
 button:hover {
@@ -54,6 +58,39 @@ button:hover {
 
 .buttons {
     margin-bottom: 20px;
+    padding: 12px 25px; /* เพิ่ม Padding ให้ปุ่มดูใหญ่ขึ้น */
+    border-radius: 8px; /* ทำให้มุมปุ่มโค้งมนขึ้น */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* เพิ่มเงาอ่อนๆ */
+    font-weight: 600; /* ทำให้ตัวอักษรหนาขึ้น */
+    letter-spacing: 0.5px; /* เพิ่มระยะห่างตัวอักษรเล็กน้อย */
+    transition: all 0.2s ease-in-out; /* เพิ่ม Transition ทุกการเปลี่ยนแปลง */
+}
+button:hover {
+    transform: translateY(-2px); /* ยกปุ่มขึ้นเล็กน้อยเมื่อ Hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* ทำให้เงาเข้มขึ้นเมื่อ Hover */
+}
+
+button:active {
+    transform: translateY(0); /* กดปุ่มแล้วกลับไปตำแหน่งเดิม */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* ลดเงาเมื่อกด */
+}
+
+/* Specific styles for action buttons (New Problem, Hint, Live Helping) */
+.action-btn {
+    background-color: #4CAF50; /* สีเขียวสดใส */
+    border-radius: 8px;
+}
+.action-btn:hover {
+    background-color: #45a049;
+}
+
+/* Specific styles for control buttons (Clear Board) */
+.control-btn {
+    background-color: #f44336; /* สีแดงสดใส */
+        border-radius: 8px;
+}
+.control-btn:hover {
+    background-color: #da190b;
 }
 
 #hint-btn, #live-help-btn {
@@ -65,11 +102,11 @@ button:hover {
 }
 
 #drawing-board {
-    border: 2px solid #ccc;
+    border: 3px solid #ccc;
     background-color: #fff;
     cursor: crosshair;
     border-radius: 8px;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.15);
     touch-action: none; /* ป้องกันการเลื่อนหน้าจอบนมือถือเมื่อวาด */
 }
 
@@ -125,10 +162,16 @@ button:hover {
     background-color: #fff3cd;
     color: #856404;
     border: 1px solid #ffeeba;
+    animation: fadeIn 0.5s forwards;
 }
 
 .feedback.success {
     background-color: #d4edda;
     color: #155724;
     border: 1px solid #c3e6cb;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
