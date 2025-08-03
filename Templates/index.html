@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โจทย์คณิตศาสตร์ & กระดานเขียน</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>โจทย์คณิตศาสตร์</h1>
+        <div id="math-problem">{{ problem }}</div>
+        <button id="new-problem-btn">โจทย์ใหม่</button>
+
+        <div class="buttons">
+            <button id="hint-btn">ขอ Hint</button>
+            <button id="live-help-btn">Live Helping</button>
+        </div>
+        <div id="feedback" class="feedback"></div>
+
+        <h2>กระดานเขียน</h2>
+        <canvas id="drawing-board" width="600" height="400"></canvas>
+        <div class="drawing-controls">
+            <button id="clear-board-btn">ล้างกระดาน</button>
+            <input type="color" id="color-picker" value="#000000">
+            <input type="range" id="brush-size" min="1" max="10" value="2">
+            <span id="brush-size-display">2 px</span>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

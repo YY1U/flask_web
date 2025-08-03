@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบฟอร์ม</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>กรอกข้อมูล</h1>
+    <form method="POST" action="{{ url_for('submit') }}">
+        <label for="name">ชื่อ:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="email">อีเมล:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <input type="submit" value="ส่ง">
+    </form>
+    <a href="{{ url_for('index') }}">กลับหน้าหลัก</a>
+</body>
+</html>
